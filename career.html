@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="html 5 template">
+	<meta name="author" content="tonytemplates.com">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="icon" href="favicon.ico">
+	<title>Auto Weldert GmbH</title>
+	<!-- Bootstrap core CSS -->
+	<link href="css/plugins/bootstrap.min.css" rel="stylesheet">
+	<link href="css/plugins/bootstrap-submenu.css" rel="stylesheet">
+	<link href="css/plugins/animate.min.css" rel="stylesheet">
+	<link href="css/plugins/slick.css" rel="stylesheet">
+	<link href="css/plugins/bootstrap-datetimepicker.css" rel="stylesheet">
+	<link href="css/custom.css" rel="stylesheet">
+	<link href="tools/tools.css" rel="stylesheet">
+	<link href="css/color/color-green.css" rel="stylesheet">
+	<link href="css/color/color-orange.css" rel="stylesheet">
+	<link href="css/color/color-blue.css" rel="stylesheet">
+	<link href="css/color/color-red.css" rel="stylesheet">
+	<link href="css/color/color-indigo.css" rel="stylesheet">
+	<link href="css/color/color-turquoise.css" rel="stylesheet">
+	<link href="css/plugins/jquery.scrolling-tabs.css" rel="stylesheet">
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	<!-- Icon Font-->
+	<link href="iconfont/style.css" rel="stylesheet">
+	<!-- Google Fonts -->
+	<link
+		href="https://fonts.googleapis.com/css?family=Muli:100,100i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+		rel="stylesheet">
+	<!-- Google map -->
+	<script src="https://maps.googleapis.com/maps/api/js" type="text/javascript"></script>
+	<!-- i18n  -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/i18next/22.4.0/i18next.min.js"></script>
+</head>
+
+<body class="layout-2">
+	<div class="colorswatch layoutswatch">
+		<div class="colorswatch-btn js-layoutswatch">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24">
+				<g fill="none" stroke="white" stroke-width="2">
+					<circle cx="12" cy="12" r="9" />
+					<path d="M12 3c2.7 2 4 6 4 9s-1.3 7-4 9M12 3c-2.7 2-4 6-4 9s1.3 7 4 9M3 12h18" />
+				</g>
+			</svg>
+		</div>
+		<div class="colorswatch-inside">
+			<a onclick="changeLanguage('en')"><img src="tools/en-formatted.png" alt=""
+					class="img-responsive">English</a>
+			<a onclick="changeLanguage('de')"><img src="tools/de-formatted.png" alt=""
+					class="img-responsive">Deutsch</a>
+			<a onclick="changeLanguage('tr')"><img src="tools/tr-formatted.png" alt="" class="img-responsive">Türkçe</a>
+			<div class="clearfix"></div>
+			<div class="title" data-i18n="change-language"></div>
+		</div>
+	</div>
+	<div class="colorswatch">
+		<div class="colorswatch-btn js-colorswatch">
+			<svg height="1792" viewBox="0 0 1792 1792" width="1792" xmlns="http://www.w3.org/2000/svg">
+				<path
+					d="M1615 0q70 0 122.5 46.5t52.5 116.5q0 63-45 151-332 629-465 752-97 91-218 91-126 0-216.5-92.5t-90.5-219.5q0-128 92-212l638-579q59-54 130-54zm-909 1034q39 76 106.5 130t150.5 76l1 71q4 213-129.5 347t-348.5 134q-123 0-218-46.5t-152.5-127.5-86.5-183-29-220q7 5 41 30t62 44.5 59 36.5 46 17q41 0 55-37 25-66 57.5-112.5t69.5-76 88-47.5 103-25.5 125-10.5z" />
+			</svg>
+		</div>
+		<div class="colorswatch-inside">
+			<a href="#" class="color-red"></a>
+			<a href="#" class="color-orange"></a>
+			<a href="#" class="color-yellow active"></a>
+			<a href="#" class="color-green"></a>
+			<a href="#" class="color-blue"></a>
+			<a href="#" class="color-indigo"></a>
+			<div class="clearfix"></div>
+			<div class="title" data-i18n="color"></div>
+		</div>
+	</div>
+	<!-- Loader -->
+	<div id="loader-wrapper">
+		<div class="loader">
+			<div class="line"></div>
+			<div class="line"></div>
+			<div class="line"></div>
+			<div class="line"></div>
+			<div class="line"></div>
+			<div class="line"></div>
+			<div class="subline"></div>
+			<div class="subline"></div>
+			<div class="subline"></div>
+			<div class="subline"></div>
+			<div class="subline"></div>
+			<div class="loader-circle-1">
+				<div class="loader-circle-2"></div>
+			</div>
+			<div class="needle"></div>
+			<div class="loading" data-i18n="loading"></div>
+		</div>
+	</div>
+	<!-- //Loader -->
+	<!-- Header -->
+	<header class="page-header-2 header-sticky">
+		<div class="header-info-mobile">
+			<div class="header-info-mobile-inside">
+				<p data-i18n="address"><i class="icon icon-locate"></i></p>
+				<p data-i18n="phone-fax"><i class="icon icon-phone"></i></p>
+				<p data-i18n="opening-hours"><i class="icon icon-clock"></i></p>
+				<p data-i18n="email"><i class="icon icon-email"></i><a href="mailto:service@auto-weldert.de"></a>
+				</p>
+			</div>
+		</div>
+		<div class="header-topline">
+			<div class="header-info-toggle"><i class="icon-locate js-info-toggle"></i></div>
+			<div class="header-right-top">
+				<div class="right-logo">
+					<div class="logo">
+						<img src="images/auto-pro.png" class="logo-img" alt="">
+					</div>
+				</div>
+				<!-- <a href="#" class="appointment" data-toggle="modal" data-target="#appointmentForm"><i class="icon-shape icon"></i><span>Appointment</span></a> -->
+			</div>
+			<div class="container">
+				<div class="row-flex">
+					<div class="col-left" data-i18n="opening-hours"><i class="icon icon-clock"></i></div>
+					<div class="col-center"><i class="icon icon-phone"></i>
+						<span class="hidden-md" data-i18n="schedule-appointment"></span>
+						<a class="header-phone" data-i18n="phone"></a>
+					</div>
+					<div class="col-right" data-i18n="address"><i class="icon icon-locate"></i></div>
+				</div>
+			</div>
+		</div>
+		<nav class="navbar" id="slide-nav">
+			<div class="container">
+				<div class="header-row">
+					<div class="logo">
+						<a href="index.html">
+							<img src="images/logo.png" class="logo-img" alt="">
+						</a>
+					</div>
+					<div id="slidemenu">
+						<div class="close-menu"><i class="icon-close-cross"></i></div>
+						<ul class="nav navbar-nav">
+							<li><a href="index.html" data-i18n="home"><span></span></a></li>
+							<li><a href="about.html" data-i18n="about-us"><span></span></a></li>
+							<li><a href="services.html" data-i18n="services"><span></span></a></li>
+							<li><a href="gallery.html" data-i18n="gallery"><span></span></a></li>
+							<li class="active"><a href="career.html" data-i18n="career"><span></span></a></li>
+							<li><a href="contact.html" data-i18n="contacts"><span></span></a></li>
+							<li class="dropdown change-language">
+								<a data-toggle="dropdown" data-submenu="">
+									<span data-i18n="change-language"></span>
+									<span class="ecaret"></span>
+								</a>
+								<ul class="dropdown-menu" role="menu">
+									<li><a onclick="changeLanguage('en')" >English</a></li>
+									<li><a onclick="changeLanguage('de')" >Deutsch</a></li>
+									<li><a onclick="changeLanguage('tr')" >Türkçe</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<div class="header-row-right">
+						<button type="button" class="navbar-toggle"><i class="icon icon-lines-menu"></i></button>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<!-- // Header -->
+	<!-- Content  -->
+	<div id="pageTitle">
+		<div class="container">
+			<!-- Breadcrumbs Block -->
+			<div class="breadcrumbs">
+				<ul class="breadcrumb">
+					<li><a href="index.html">Home</a></li>
+					<li>Career</li>
+				</ul>
+			</div>
+			<!-- //Breadcrumbs Block -->
+			<h1>Career</h1>
+		</div>
+	</div>
+	<div id="pageContent">
+		<div class="block">
+			<div class="container">
+				<p><strong>WE ARE LOOKING FOR YOU</strong></p>
+				<p><strong>AUTOMOTIVE MECHANIC / AUTOMOTIVE MECHATRONICS TECHNICIAN (m/f)</strong></p>
+				<p>to expand our team and at the earliest possible date in full-time.</p>
+				<br>
+				<p>With over 30 years of experience in the industry, we are an extremely reliable partner and benefit
+					from numerous regular customers from Wiesbaden and the surrounding area. As an independent master
+					automotive workshop, we operate completely independently. This allows us to offer our customers
+					high-quality products and services at fair prices. To strengthen our team, we are looking for YOU! 
+				</p>
+				<br>
+				<p><strong>WE OFFER YOU</strong></p>
+				<ul>
+					<li>A challenging and varied range of tasks.</li>
+					<li>A long-term professional perspective.</li>
+					<li>A pleasant working atmosphere.</li>
+					<li>Opportunity to participate in training and further education measures.</li>
+					<li>Good pay.</li>
+				</ul>
+				<br>
+				<p><strong>YOUR TASKS</strong></p>
+				<ul>
+					<li>Termingerecht und kundenorientiert übernehmen Sie anspruchsvolle Reparaturen- und
+						Wartungsarbeiten. (You will take on demanding repair and maintenance work on schedule and with a
+						customer-oriented approach.)</li>
+					<li>Sie führen selbständig die Diagnose und Instandsetzung von Fahrzeugen durch. (You will
+						independently carry out the diagnosis and repair of vehicles.)</li>
+				</ul>
+				<br>
+				<p><strong>YOUR PROFILE</strong></p>
+				<ul>
+					<li>Abgeschlossene Berufsausbildung als Kfz-Mechaniker / Kfz-Mechatroniker (m/w) (Completed
+						vocational training as an automotive mechanic / automotive mechatronics technician (m/f)).</li>
+					<li>Selbständige und zuverlässige Arbeitsweise (Independent and reliable way of working).</li>
+					<li>Belastbarkeit, Flexibilität und Teamorientierung (Resilience, flexibility, and team
+						orientation).</li>
+					<li>Sie besitzen einen Führerschein der Klasse 3/B (You possess a Class 3/B driving license).</li>
+				</ul>
+				<br>
+				<p><strong>CONTACT</strong></p>
+				<p>Auto Weldert GmbH<br>
+					Patrickstr. 36<br>
+					65191 Wiesbaden<br>
+					Germany</p>
+				<br>
+				<p>Have we sparked your interest? Then we look forward to receiving your complete application by email
+					to <a href="mailto:info@auto-weldert.de">info@auto-weldert.de</a>.</p>
+				<br>
+				<p>Stand: Februar 2020 (Status: February 2020)</p>
+			</div>
+		</div>
+		<!-- // Block -->
+	</div>
+	<!-- // Content  -->
+	<!-- Footer -->
+	<div class="page-footer">
+		<div class="footer-content">
+			<div class="footer-col-left">
+				<div class="inside">
+					<div class="footer-phone">
+						<h2 class="h-phone" data-i18n="phone-footer"></h2>
+					</div>
+					<div class="contact-info"><i class="icon icon-locate"></i>
+						<div data-i18n="address"></div>
+					</div>
+					<div class="contact-info" >
+						<i class="icon icon-clock"></i>
+						<div data-i18n="opening-hours-long"></div>
+					</div>
+					<div class="contact-info"><i class="icon icon-email"></i>
+						<a href="mailto:service@auto-weldert.de" data-i18n="mail"></a>
+					</div>
+					<div class="social-links">
+						<ul>
+							<li>
+								<a class="icon icon-facebook-logo" href="#"></a>
+							</li>
+							<li>
+								<a class="icon icon-twitter-logo" href="#"></a>
+							</li>
+							<li>
+								<a class="icon icon-instagram-logo" href="https://www.instagram.com/autoweldert/"></a>
+							</li>
+							<li>
+								<a class="icon icon-google-plus-logo" href="#"></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="footer-col-right">
+				<iframe style="width: 100%; height: 100%; min-height: 478px;"
+				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2560.1021716922805!2d8.275235876812237!3d50.08437391365416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bdbdaffd05ca75%3A0x4cc2cc91d8c472ec!2sAuto%20Weldert%20GmbH!5e0!3m2!1str!2str!4v1746127350285!5m2!1str!2str"
+				allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+			</div>
+		</div>
+		<div class="footer-bottom">
+			<div class="container">
+				<div class="copyright" data-i18n="all-rights-reserved"></div>
+				<div class="footer-bottom-right hidden-xs">
+					&nbsp;&nbsp;<a href="privacyPolicy.html" data-i18n="privacy-policy"></a>
+					&nbsp;&nbsp;<a href="legalNotice.html" data-i18n="legal-notice"></a>
+					&nbsp;&nbsp;<a href="termsAndConditions.html" data-i18n="terms-and-conditions"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="back-to-top"><a href="#top"><span class="icon icon-transport"></span></a></div>
+	<!-- //Footer -->
+	<div class="darkout-menu"></div>
+
+	<!-- External JavaScripts -->
+	<script src="js/jquery.js"></script>
+	<script src="js/plugins/bootstrap.min.js"></script>
+	<script src="js/plugins/slick.min.js"></script>
+	<script src="js/plugins/jquery.form.js"></script>
+	<script src="js/plugins/jquery.validate.min.js"></script>
+	<script src="js/plugins/moment.js"></script>
+	<script src="js/plugins/bootstrap-datetimepicker.min.js"></script>
+	<script src="js/plugins/jquery.waypoints.min.js"></script>
+	<script src="js/plugins/jquery.countTo.js"></script>
+	<!-- Custom JavaScripts -->
+	<script src="js/localization.js"></script>
+	<script src="js/custom.js"></script>
+	<script src="tools/tool.js"></script>
+	<script src="js/forms.js"></script>
+</body>
+
+
+</html>
