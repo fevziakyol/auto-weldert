@@ -5,8 +5,8 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="html 5 template">
-	<meta name="author" content="tonytemplates.com">
+	<meta name="description" content="Auto Weldert GmbH - Web Site">
+	<meta name="author" content="auto-weldert.de.com">
 	<meta name="format-detection" content="telephone=no">
 	<link rel="icon" href="favicon.ico">
 	<title>Auto Weldert GmbH</title>
@@ -179,12 +179,12 @@
 			<!-- Breadcrumbs Block -->
 			<div class="breadcrumbs">
 				<ul class="breadcrumb">
-					<li><a href="index.html">Home</a></li>
-					<li>Contacts</li>
+					<li><a href="index.html" data-i18n="home-bread-crumbs"></a></li>
+					<li data-i18n="contact-bread-crumbs"></li>
 				</ul>
 			</div>
 			<!-- //Breadcrumbs Block -->
-			<h1>Contacts</h1>
+			<h1 data-i18n="contact"></h1>
 		</div>
 	</div>
 	<div id="pageContent">
@@ -193,29 +193,28 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4">
-						<h3>Call: 0611 567575</h3>
+						<h3 data-i18n="call"></h3>
 					</div>
-					<div class="col-md-8">If you have any questions or comments regarding us or your vehicle, please
-						fill out a contact request form below. Or if you prefer, you can reach us at the following
-						address:</div>
+					<div class="col-md-8" data-i18n="contact-info-desc"></div>
 				</div>
 				<div class="row row-grey">
 					<div class="col-sm-4">
 						<div class="contact-info">
-							<h5>Post Address</h5>
-							<i class="icon icon-locate"></i>Patrickstraße 36,
-							<br> 65191 Wiesbaden
+							<h5 data-i18n="post-address-title"></h5>
+							<i class="icon icon-locate"></i>
+							<span data-i18n="post-address"></span>
 						</div>
 					</div>
 					<div class="col-sm-4">
 						<div class="contact-info">
-							<h5>Working Hours</h5>
-							<i class="icon icon-clock"></i>Monday-Friday 7:30AM - 16:30PM
+							<h5 data-i18n="working-hours-title"></h5>
+							<i class="icon icon-clock"></i>
+							<span data-i18n="working-hours"></span>
 						</div>
 					</div>
 					<div class="col-sm-4">
 						<div class="contact-info">
-							<h5>Follow Us</h5>
+							<h5 data-i18n="follow-us-title"></h5>
 							<div class="social-links">
 								<ul>
 									<li>
@@ -225,8 +224,7 @@
 										<a class="icon icon-twitter-logo" href="#"></a>
 									</li>
 									<li>
-										<a class="icon icon-instagram-logo"
-											href="https://www.instagram.com/autoweldert/"></a>
+										<a class="icon icon-instagram-logo" href="https://www.instagram.com/autoweldert/"></a>
 									</li>
 									<li>
 										<a class="icon icon-google-plus-logo" href="#"></a>
@@ -236,34 +234,32 @@
 						</div>
 					</div>
 				</div>
-				<h2>Contact Us</h2>
+				<h2 data-i18n="contact-us-title"></h2>
 				<form id="contactform" class="contact-form" name="contactform" method="post" novalidate>
 					<div id="success" class="successform">
-						<p>Your message was sent successfully!</p>
+						<p data-i18n="success-message"></p>
 					</div>
 					<div id="error" class="errorform">
-						<p>Something went wrong, try refreshing and submitting the form again.</p>
+						<p data-i18n="error-message"></p>
 					</div>
 					<div class="row">
 						<div class="col-sm-6">
 							<div class="input-wrapper">
-								<input type="text" class="input-custom input-full" name="name" placeholder="Your name">
+								<input type="text" class="input-custom input-full" name="name" data-i18n="your-name" placeholder="Your name">
 							</div>
 							<div class="input-wrapper">
-								<input type="text" class="input-custom input-full" name="phone"
-									placeholder="Your Phone">
+								<input type="text" class="input-custom input-full" name="phone" data-i18n="your-phone" placeholder="Your phone">
 							</div>
 							<div class="input-wrapper">
-								<input type="text" class="input-custom input-full" name="email" placeholder="E-mail">
+								<input type="text" class="input-custom input-full" name="email" data-i18n="your-email" placeholder="E-mail">
 							</div>
 						</div>
 						<div class="col-sm-6">
-							<textarea class="textarea-custom input-full" name="message"
-								placeholder="Comment"></textarea>
+							<textarea class="textarea-custom input-full" name="message" data-i18n="your-comment" placeholder="Comment"></textarea>
 						</div>
 					</div>
 					<div class="divider-sm"></div>
-					<button type="submit" id="submit-contact" class="btn"><span>Send Message</span></button>
+					<button type="submit" id="submit-contact" class="btn"><span data-i18n="send-message"></span></button>
 				</form>
 			</div>
 		</div>

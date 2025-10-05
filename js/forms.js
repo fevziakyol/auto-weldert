@@ -1,5 +1,5 @@
 (function ($) {
-	
+
 	"use strict";
 
 	var $document = $(document),
@@ -11,161 +11,61 @@
 		};
 
 	$document.ready(function () {
-   
-    // quote form
-		if (forms.quoteForm.length) {
-			var $quoteForm = forms.quoteForm;
-			$quoteForm.validate({
-				rules: {
-					name: {
-						required: true,
-						minlength: 2
-					},
-					message: {
-						required: true,
-						minlength: 20
-					},
-					email: {
-						required: true,
-						email: true
-					}
-
-				},
-				messages: {
-					name: {
-						required: "Please enter your name",
-						minlength: "Your name must consist of at least 2 characters"
-					},
-					message: {
-						required: "Please enter message",
-						minlength: "Your message must consist of at least 20 characters"
-					},
-					email: {
-						required: "Please enter your email"
-					}
-				},
-				submitHandler: function (form) {
-					$(form).ajaxSubmit({
-						type: "POST",
-						data: $(form).serialize(),
-						url: "form/process-quote.php",
-						success: function () {
-							$('#successQuote').fadeIn();
-							$('#quote-form').each(function () {
-								this.reset();
-							});
-						},
-						error: function () {
-							$('#quote-form').fadeTo("slow", 0, function () {
-								$('#errorQuote').fadeIn();
-							});
-						}
-					});
-				}
-			});
-		}
-    
-
-		// appointment form
-		if (forms.appointmentForm.length) {
-			var $appointmentForm = forms.appointmentForm;
-			$appointmentForm.validate({
-				rules: {
-					name: {
-						required: true,
-						minlength: 2
-					},
-					message: {
-						required: true,
-						minlength: 20
-					},
-					email: {
-						required: true,
-						email: true
-					}
-
-				},
-				messages: {
-					name: {
-						required: "Please enter your name",
-						minlength: "Your name must consist of at least 2 characters"
-					},
-					message: {
-						required: "Please enter message",
-						minlength: "Your message must consist of at least 20 characters"
-					},
-					email: {
-						required: "Please enter your email"
-					}
-				},
-				submitHandler: function (form) {
-					$(form).ajaxSubmit({
-						type: "POST",
-						data: $(form).serialize(),
-						url: "form/process-appointment.php",
-						success: function () {
-							$('#successAppointment').fadeIn();
-							$('#appointment-form').each(function () {
-								this.reset();
-							});
-						},
-						error: function () {
-							$('#appointment-form').fadeTo("slow", 0, function () {
-								$('#errorAppointment').fadeIn();
-							});
-						}
-					});
-				}
-			});
-		}
 
 		// contact page form
 		if (forms.contactForm.length) {
 			var $contactform = forms.contactForm;
+			const FORM_SUBMIT_AJAX_URL = "https://formsubmit.co/ajax/31ded1f21b901fa5f7a2cf6ed215d52b";
+			const FORM_SUBMIT_RAMA_AJAX_URL = "https://formsubmit.co/ajax/37d44ec5fa203d86dcfaac9d035764f7";
+
 			$contactform.validate({
 				rules: {
-					name: {
-						required: true,
-						minlength: 2
-					},
-					message: {
-						required: true,
-						minlength: 20
-					},
-					email: {
-						required: true,
-						email: true
-					}
-
+					name: { required: true, minlength: 2 },
+					phone: { required: true, digits: true, minlength: 10 },
+					email: { required: true, email: true },
+					message: { required: true, minlength: 20 }
 				},
 				messages: {
 					name: {
-						required: "Please enter your name",
-						minlength: "Your name must consist of at least 2 characters"
+						required: "Please enter your name.",
+						minlength: "Your name must be at least 2 characters long."
 					},
-					message: {
-						required: "Please enter message",
-						minlength: "Your message must consist of at least 20 characters"
+					phone: {
+						required: "Please enter your phone number.",
+						digits: "The phone number must contain only digits."
 					},
 					email: {
-						required: "Please enter your email"
+						required: "Please enter your email address.",
+						email: "Please enter a valid email address."
+					},
+					message: {
+						required: "Please enter your message.",
+						minlength: "Your message must be at least 20 characters long."
 					}
 				},
 				submitHandler: function (form) {
-					$(form).ajaxSubmit({
+					var formData = convertFormToJSON(form);
+					$.ajax({
 						type: "POST",
-						data: $(form).serialize(),
-						url: "form/process-contact.php",
+						url: FORM_SUBMIT_RAMA_AJAX_URL,
+						data: JSON.stringify(formData),
+						contentType: "application/json",
+						dataType: "json",
+						headers: {
+							'Accept': 'application/json'
+						},
+
 						success: function () {
 							$('#success').fadeIn();
-							$('#contactform').each(function () {
+							$(form).each(function () {
 								this.reset();
 							});
 						},
-						error: function () {
+						error: function (xhr, status, error) {
 							$('#contactform').fadeTo("slow", 0, function () {
 								$('#error').fadeIn();
 							});
+							console.error("AJAX Hata:", xhr.responseText);
 						}
 					});
 				}
@@ -202,5 +102,15 @@
 			}
 
 	});
-	
+
+  function convertFormToJSON(form) {
+    var array = $(form).serializeArray();
+    var json = {};
+
+    $.each(array, function() {
+      json[this.name] = this.value || '';
+    });
+    return json;
+  }
+
 })(jQuery);
