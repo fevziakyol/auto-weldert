@@ -8979,6 +8979,7 @@ div.vertical-tab div.vertical-tab-content:not(.active) {
 .how-works-block .caption>.inside .text h5 {
   font-weight: 600;
   margin-bottom: 0;
+  color: white;
 }
 
 @media (max-width: 991px) {
