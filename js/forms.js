@@ -15,7 +15,6 @@
 		// contact page form
 		if (forms.contactForm.length) {
 			var $contactform = forms.contactForm;
-			const FORM_SUBMIT_AJAX_URL = "https://formsubmit.co/ajax/31ded1f21b901fa5f7a2cf6ed215d52b";
 			const FORM_SUBMIT_RAMA_AJAX_URL = "https://formsubmit.co/ajax/37d44ec5fa203d86dcfaac9d035764f7";
 
 			$contactform.validate({
